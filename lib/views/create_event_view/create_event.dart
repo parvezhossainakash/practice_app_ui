@@ -2,15 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:untitled/views/create_event_view/widget/custom_check_box_field.dart';
 import 'package:untitled/views/create_event_view/widget/custom_drop_down.dart';
 import 'package:untitled/views/create_event_view/widget/custom_event_drop_down.dart';
-import 'package:untitled/views/create_event_view/widget/custom_event_field.dart'
-    hide CustomEventDropDown;
-<<<<<<< HEAD
+import 'package:untitled/views/create_event_view/widget/custom_event_field.dart';
 import 'package:untitled/views/create_event_view/widget/custom_image_field.dart';
-=======
->>>>>>> 8c21c9541144c9678c8cf96d506e6f5175d6a118
 import 'package:untitled/views/create_event_view/widget/description.dart';
 import 'package:untitled/views/search_view/filter_view/catagories_view/catagories_view.dart';
-
 import '../../core/utils/constant/constant_colors.dart';
 import '../../core/utils/custom_widget/custom_appbar.dart';
 import '../../core/utils/custom_widget/custom_elevatedbutton.dart';
@@ -82,20 +77,14 @@ class CreateEvent extends StatelessWidget {
                   text1: 'One time Event',
                 ),
                 SizedBox(height: 16),
-                CustomImageField(),
-<<<<<<< HEAD
-                Padding(
+                CustomImageField(),               Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: CustomElevatedButton(
 
                       text: 'Create Event', onPressed: () {}),
                 ),
-                SizedBox(height: 20,)
-
-=======
-                SizedBox(height: 16),
+                SizedBox(height: 20,),
                 CustomElevatedButton(text: 'Create Event', onPressed: () {}),
->>>>>>> 8c21c9541144c9678c8cf96d506e6f5175d6a118
               ],
             ),
           ),
@@ -104,8 +93,6 @@ class CreateEvent extends StatelessWidget {
     );
   }
 }
-<<<<<<< HEAD
-=======
 
 class CustomImageField extends StatelessWidget {
   const CustomImageField({
@@ -141,4 +128,3 @@ class CustomImageField extends StatelessWidget {
     );
   }
 }
->>>>>>> 8c21c9541144c9678c8cf96d506e6f5175d6a118

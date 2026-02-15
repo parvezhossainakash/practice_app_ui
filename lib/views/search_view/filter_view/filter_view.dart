@@ -78,6 +78,8 @@ class FilterBottomSheet extends StatelessWidget {
 
             CustomElevatedButton(
               width: 362,
+              backgroundColor: AppColors.primary,
+              textColor: AppColors.accent,
               text: "Apply Filter",
               onPressed: () {
                 Get.to(ApplyFilterView());

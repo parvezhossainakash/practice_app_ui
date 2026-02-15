@@ -38,12 +38,7 @@ dependencies:
   pin_code_fields: ^8.0.1
   image_picker: ^1.0.7
   multi_image_picker_view: ^3.0.0
-<<<<<<< HEAD
-  dotted_border: ^3.1.0
   table_calendar: ^3.0.9
-=======
->>>>>>> 8c21c9541144c9678c8cf96d506e6f5175d6a118
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
