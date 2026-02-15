@@ -38,7 +38,9 @@ class CustomGridView extends StatelessWidget {
                       context: context,
                       barrierDismissible: false,
                       builder: (context) {
-                        return CardView();
+                        return Dialog(
+                          backgroundColor: Colors.transparent,
+                          child: CardView(),);
                       },);
 
                     // image tap

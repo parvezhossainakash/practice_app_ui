@@ -6,6 +6,7 @@ import '../../core/utils/custom_widget/custom_appbar.dart';
 import '../../core/utils/custom_widget/custom_bottom_bar.dart';
 import 'create_event.dart';
 import 'custom_list_view/custom_list_view.dart';
+import 'edit_card/edit_card.dart';
 class CreateEventView extends StatelessWidget {
   const CreateEventView({super.key});
 
@@ -14,7 +15,15 @@ class CreateEventView extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.appBackground,
       appBar: CustomAppBar(title: 'Create Event', showBack: true),
-      body: CustomListView(),
+      body: InkWell(
+
+          onTap: (){
+            showDialog(context: context, builder: (context)=>Dialog(
+              backgroundColor: Colors.transparent,
+              child: EditCard(),
+            ));
+          },
+          child: CustomListView()),
       floatingActionButton: FloatingActionButton(
         backgroundColor: AppColors.primary,
         child: Icon(Icons.add,color: AppColors.buttonSecondary,),

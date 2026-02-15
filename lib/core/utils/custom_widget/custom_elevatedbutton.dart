@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_core/src/get_main.dart' show Get;
-import 'package:get/get_navigation/src/extension_navigation.dart';
+
+import 'package:untitled/core/utils/constant/constant_colors.dart';
 
 
 
@@ -54,7 +54,9 @@ class CustomElevatedButton extends StatelessWidget{
   final  onPressed;
   final Color? backgroundColor ;
   final Color textColor;
+  final Color? borderColor;
   final double borderRadius;
+  final IconData? icon;
 
   final double height;
   final double width;
@@ -64,9 +66,11 @@ class CustomElevatedButton extends StatelessWidget{
   required this.onPressed,
     this.backgroundColor ,
     this.textColor = Colors.white,
+    this.borderColor,
     this.borderRadius =12,
     this.height = 56,
      this.width = 362,
+    this.icon
 });
 
 
@@ -77,16 +81,16 @@ class CustomElevatedButton extends StatelessWidget{
       height: height,
       width: width,
       child: ElevatedButton(
+
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           backgroundColor: backgroundColor ?? Color(0xFF0F6421),
-
+          side: BorderSide(width: 1, color: borderColor ?? AppColors.primary ),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(borderRadius),
           ),
         ),
-
-        child: Text(
+       child:  Text(
           text,
           style: TextStyle(
             color: textColor,

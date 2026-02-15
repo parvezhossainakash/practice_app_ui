@@ -4,7 +4,10 @@ import 'package:untitled/core/utils/constant/constant_colors.dart';
 
 class CustomTextButton extends StatefulWidget {
   String text;
-  CustomTextButton({super.key,required this.text});
+ final VoidCallback? onPressed;
+  CustomTextButton({
+    super.key,required this.text
+  ,this.onPressed});
 
   @override
   State<CustomTextButton> createState() => _CustomTextButtonState();
@@ -24,9 +27,7 @@ class _CustomTextButtonState extends State<CustomTextButton> {
               borderRadius: BorderRadius.circular(12),
             ),
           ),
-          onPressed: () {
-            // Handle button press
-          },
+          onPressed: widget.onPressed,
           child: Align(
               alignment: Alignment.center,
 

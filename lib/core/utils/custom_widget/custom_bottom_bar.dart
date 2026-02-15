@@ -4,7 +4,9 @@ import 'package:untitled/core/utils/constant/constant_colors.dart';
 import 'package:untitled/views/home_view/Home_view.dart';
 import 'package:untitled/views/search_view/search_view.dart';
 
+import '../../../views/calendar_view/calendar_view.dart';
 import '../../../views/create_event_view/create_event_view.dart';
+import '../../../views/profile_view/profile_view.dart';
 class _BottomBarItem extends StatelessWidget {
   final String icon;
   final VoidCallback onTap;
@@ -84,11 +86,17 @@ class CustomBottomBar extends StatelessWidget {
             ),
             _BottomBarItem(
               icon: "assets/icons/clander.png",
-              onTap: () {},
+              onTap: () {
+                Get.to(() => CalendarView());
+              },
             ),
             _BottomBarItem(
               icon: "assets/icons/face.png",
-              onTap: () {},
+              onTap: () {
+                Get.to(() => ProfileView(
+
+                ));
+              },
             ),
           ],
         ),
