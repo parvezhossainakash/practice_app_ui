@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+<<<<<<< HEAD
 import 'package:untitled/core/utils/custom_widget/custom_text_button.dart';
 import 'package:untitled/views/create_event_view/create_event.dart';
 import 'package:untitled/views/create_event_view/edit_card/edit_card.dart';
+=======
+import 'package:untitled/views/create_event_view/create_event.dart';
+>>>>>>> 8c21c9541144c9678c8cf96d506e6f5175d6a118
 import 'package:untitled/views/home_view/Home_view.dart';
 import 'package:untitled/views/splash_view/splash_view.dart';
 
@@ -25,6 +29,7 @@ class App extends StatelessWidget {
     );
   }
 }
+<<<<<<< HEAD
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -57,3 +62,5 @@ class Home extends StatelessWidget {
   }
 }
 
+=======
+>>>>>>> 8c21c9541144c9678c8cf96d506e6f5175d6a118

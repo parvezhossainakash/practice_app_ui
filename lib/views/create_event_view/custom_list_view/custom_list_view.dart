@@ -1,13 +1,20 @@
+<<<<<<< HEAD
 import 'dart:ffi';
 
+=======
+>>>>>>> 8c21c9541144c9678c8cf96d506e6f5175d6a118
 import 'package:flutter/material.dart';
 
 import 'catagories.dart';
 
 
 class CustomListView extends StatefulWidget {
+<<<<<<< HEAD
   final int? itemCount;
   const CustomListView({super.key,this.itemCount});
+=======
+  const CustomListView({super.key});
+>>>>>>> 8c21c9541144c9678c8cf96d506e6f5175d6a118
 
   @override
   State<CustomListView> createState() => _CustomListViewState();
@@ -17,9 +24,14 @@ class _CustomListViewState extends State<CustomListView> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+<<<<<<< HEAD
 
       padding: const EdgeInsets.all(16),
       itemCount: widget.itemCount ?? events.length,
+=======
+      padding: const EdgeInsets.all(16),
+      itemCount: events.length,
+>>>>>>> 8c21c9541144c9678c8cf96d506e6f5175d6a118
       itemBuilder: (context, index) {
         final event = events[index];
 
@@ -37,7 +49,10 @@ class _CustomListViewState extends State<CustomListView> {
             ],
           ),
           child: Row(
+<<<<<<< HEAD
             mainAxisSize: MainAxisSize.min,
+=======
+>>>>>>> 8c21c9541144c9678c8cf96d506e6f5175d6a118
             children: [
 
               // IMAGE

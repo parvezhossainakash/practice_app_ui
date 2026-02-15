@@ -4,7 +4,10 @@ import 'package:untitled/views/create_event_view/widget/custom_drop_down.dart';
 import 'package:untitled/views/create_event_view/widget/custom_event_drop_down.dart';
 import 'package:untitled/views/create_event_view/widget/custom_event_field.dart'
     hide CustomEventDropDown;
+<<<<<<< HEAD
 import 'package:untitled/views/create_event_view/widget/custom_image_field.dart';
+=======
+>>>>>>> 8c21c9541144c9678c8cf96d506e6f5175d6a118
 import 'package:untitled/views/create_event_view/widget/description.dart';
 import 'package:untitled/views/search_view/filter_view/catagories_view/catagories_view.dart';
 
@@ -80,6 +83,7 @@ class CreateEvent extends StatelessWidget {
                 ),
                 SizedBox(height: 16),
                 CustomImageField(),
+<<<<<<< HEAD
                 Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: CustomElevatedButton(
@@ -88,6 +92,10 @@ class CreateEvent extends StatelessWidget {
                 ),
                 SizedBox(height: 20,)
 
+=======
+                SizedBox(height: 16),
+                CustomElevatedButton(text: 'Create Event', onPressed: () {}),
+>>>>>>> 8c21c9541144c9678c8cf96d506e6f5175d6a118
               ],
             ),
           ),
@@ -96,3 +104,41 @@ class CreateEvent extends StatelessWidget {
     );
   }
 }
+<<<<<<< HEAD
+=======
+
+class CustomImageField extends StatelessWidget {
+  const CustomImageField({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 344,
+      width: 327,
+      decoration: BoxDecoration(
+        color: AppColors.appBackground,
+
+        borderRadius: BorderRadius.all(Radius.circular(8.0)),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Upload image',
+              style: TextStyle(
+                color: AppColors.secondary,
+                fontSize: 16,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+>>>>>>> 8c21c9541144c9678c8cf96d506e6f5175d6a118
