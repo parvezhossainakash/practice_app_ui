@@ -18,7 +18,7 @@ class ValidationPage extends StatelessWidget {
         width: double.infinity,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/image/login_background.png'),
+            image: AssetImage('assets/images/login_background.png'),
             fit: BoxFit.cover,
           ),
         ),
@@ -83,7 +83,7 @@ class ValidationPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset(
-                    "assets/image/Clock_cercle.png",
+                    "assets/images/Clock_cercle.png",
                     height: 20,
                     width: 20,
                   ),

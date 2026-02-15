@@ -5,7 +5,7 @@ import 'package:untitled/views/auth_view/verify_email_view.dart';
 
 import '../../core/utils/custom_widget/custom_container.dart';
 import '../../core/utils/custom_widget/custom_elevatedbutton.dart';
-import 'custom_widgets/custom_validation_field/custom_textfield.dart';
+import '../../core/utils/custom_widget/custom_textfield.dart';
 
 class ForgetPassword extends StatefulWidget {
   const ForgetPassword({super.key});
