@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_connect/http/src/utils/utils.dart';
 
 import '../../core/utils/constant/constant_colors.dart';
 import '../../core/utils/custom_widget/custom_appbar.dart';
@@ -15,17 +16,15 @@ class CreateEventView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.appBackground,
-      appBar: CustomAppBar(title: 'Create Event', showBack: true),
-      body: InkWell(
-
-          onTap: (){
-            showDialog(context: context, builder: (context)=>Dialog(
-              backgroundColor: Colors.transparent,
-              child: EditCard(),
-            ));
-          },
-          child: CustomListView()),
-      bottomNavigationBar: CustomBottomBar(),
+      appBar: CustomAppBar(title: 'Create Event',
+      showBack: false,),
+      body:  CustomListView(),
+     floatingActionButton: FloatingActionButton(
+         child: Icon(Icons.add,color: AppColors.appBackground,),
+         backgroundColor: AppColors.primary,
+         onPressed: (){
+           Get.to(()=> CreateEvent());
+         }),
 
     );
   }

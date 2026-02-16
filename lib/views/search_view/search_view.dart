@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
-
 import '../../core/utils/constant/constant_colors.dart';
 import '../../core/utils/custom_widget/custom_appbar.dart';
-import '../../core/utils/custom_widget/custom_bottom_bar.dart';
 import 'filter_view/filter_view.dart';
 
 class SearchView extends StatelessWidget {
@@ -14,7 +11,8 @@ class SearchView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.appBackground,
-      appBar: CustomAppBar(title: 'Search', showBack: true),
+      appBar: CustomAppBar(title: 'Search',
+      showBack: false,),
       body: Column(
         children: [
           Padding(
@@ -68,7 +66,8 @@ class SearchView extends StatelessWidget {
           )
         ],
       ),
-      bottomNavigationBar: CustomBottomBar(),
+
+
     );
   }
 }

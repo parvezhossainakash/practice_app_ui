@@ -1,15 +1,14 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:untitled/views/create_event_view/widget/custom_check_box_field.dart';
-import 'package:untitled/views/create_event_view/widget/custom_drop_down.dart';
 import 'package:untitled/views/create_event_view/widget/custom_event_drop_down.dart';
 import 'package:untitled/views/create_event_view/widget/custom_event_field.dart';
-import 'package:untitled/views/create_event_view/widget/custom_image_field.dart';
 import 'package:untitled/views/create_event_view/widget/description.dart';
-import 'package:untitled/views/search_view/filter_view/catagories_view/catagories_view.dart';
 import '../../core/utils/constant/constant_colors.dart';
 import '../../core/utils/custom_widget/custom_appbar.dart';
 import '../../core/utils/custom_widget/custom_elevatedbutton.dart';
-
 import 'widget/custom_date_time.dart';
 
 class CreateEvent extends StatelessWidget {
@@ -84,7 +83,6 @@ class CreateEvent extends StatelessWidget {
                       text: 'Create Event', onPressed: () {}),
                 ),
                 SizedBox(height: 20,),
-                CustomElevatedButton(text: 'Create Event', onPressed: () {}),
               ],
             ),
           ),
@@ -122,9 +120,94 @@ class CustomImageField extends StatelessWidget {
                 fontWeight: FontWeight.w700,
               ),
             ),
+            SizedBox(height: 10),
+            Container(height: 200,
+              width: 279,
+              decoration: BoxDecoration(
+                color: Colors.grey.shade200,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: InnerImagePiker(),
+            )
           ],
         ),
       ),
+    );
+  }
+}
+
+class InnerImagePiker extends StatefulWidget {
+  const InnerImagePiker({super.key});
+
+  @override
+  State<InnerImagePiker> createState() => _InnerImagePikerState();
+}
+
+class _InnerImagePikerState extends State<InnerImagePiker> {
+  File? image;
+  final ImagePicker picker = ImagePicker();
+
+  Future<void> pickFromGallery() async {
+    final XFile? pickedImage = await picker.pickImage(source: ImageSource.gallery);
+
+    if (pickedImage != null){
+      setState(()=> image = File(pickedImage.path));
+    }
+
+  }
+  Future<void> pickCamera( )async{
+    final XFile? pickedImage = await picker.pickImage(source: ImageSource.camera);
+
+    if (pickedImage != null){
+      setState(()=> image = File(pickedImage.path));
+    }
+  }
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        image == null
+        ? Text('No image selected')
+            : Image.file(image!,height: 100,width: 100),
+        SizedBox(height: 10,),
+        InkWell(
+            onTap: pickCamera,
+            child: Container(
+              decoration: BoxDecoration(
+                color: AppColors.primary,
+                borderRadius: BorderRadius.circular(12),
+
+              ),
+              child: Text('Browse files',style: TextStyle(
+                color: AppColors.accent,
+              ),
+              ),
+
+            )
+
+        ),
+        SizedBox(height: 10,),
+
+        InkWell(
+          onTap: pickFromGallery,
+          child: Container(
+            decoration: BoxDecoration(
+              color: AppColors.primary,
+              borderRadius: BorderRadius.circular(12),
+
+            ),
+            child: Text('Browse files',style: TextStyle(
+    color: AppColors.accent,
+    ),
+          ),
+
+        )
+
+        )],
     );
   }
 }

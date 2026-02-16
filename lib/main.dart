@@ -4,7 +4,7 @@ import 'package:untitled/core/utils/custom_widget/custom_text_button.dart';
 import 'package:untitled/views/create_event_view/create_event.dart';
 import 'package:untitled/views/create_event_view/edit_card/edit_card.dart';
 import 'package:untitled/views/create_event_view/create_event.dart';
-import 'package:untitled/views/home_view/Home_view.dart';
+import 'package:untitled/views/home_view/home_view.dart';
 import 'package:untitled/views/splash_view/splash_view.dart';
 
 void main(){

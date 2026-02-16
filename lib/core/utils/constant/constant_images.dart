@@ -14,6 +14,15 @@ class AppImage{
   static const String involvedText ='assets/image/involved_text.png';
 
 
+  //Icon image asset
+
+static const String home = 'assets/icons/Home.png';
+static const String search = 'assets/icons/search.png';
+static const String add = 'assets/icons/add.png';
+static const String clander = 'assets/icons/clander.png';
+static const String face = 'assets/icons/face.png';
+
+
 
 
 

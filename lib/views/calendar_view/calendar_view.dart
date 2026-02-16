@@ -23,11 +23,14 @@ class _CalendarViewState extends State<CalendarView> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.appBackground,
-      appBar: CustomAppBar(title: 'Calendar', showBack: true),
+      appBar: CustomAppBar(title: 'Calendar', showBack: false,),
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 16.0,
+              vertical: 8.0,
+            ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -55,7 +58,10 @@ class _CalendarViewState extends State<CalendarView> {
                         color: Colors.grey.shade200,
                       ),
                       child: IconButton(
-                        icon: const Icon(Icons.chevron_left, color: Colors.black54),
+                        icon: const Icon(
+                          Icons.chevron_left,
+                          color: Colors.black54,
+                        ),
                         onPressed: () {
                           setState(() {
                             _focusedDay = DateTime(
@@ -76,7 +82,10 @@ class _CalendarViewState extends State<CalendarView> {
                         color: Colors.grey.shade200,
                       ),
                       child: IconButton(
-                        icon: const Icon(Icons.chevron_right, color: Colors.black54),
+                        icon: const Icon(
+                          Icons.chevron_right,
+                          color: Colors.black54,
+                        ),
                         onPressed: () {
                           setState(() {
                             _focusedDay = DateTime(
@@ -117,10 +126,12 @@ class _CalendarViewState extends State<CalendarView> {
                 shape: BoxShape.circle,
               ),
               todayDecoration: BoxDecoration(
-                borderRadius: const BorderRadius.only(bottomRight: Radius.circular(12)),
-                 border: Border.all(color: Colors.grey),
+                borderRadius: const BorderRadius.only(
+                  bottomRight: Radius.circular(12),
+                ),
+                border: Border.all(color: Colors.grey),
 
-                 color: const Color(0xFF1E824C), // Matching green from image
+                color: const Color(0xFF1E824C), // Matching green from image
                 shape: BoxShape.circle,
               ),
               defaultTextStyle: const TextStyle(fontWeight: FontWeight.bold),
@@ -132,95 +143,88 @@ class _CalendarViewState extends State<CalendarView> {
             ),
           ),
           const SizedBox(height: 16),
-Padding(
-  padding: const EdgeInsets.all(12.0),
-  child: Container(
-    padding: EdgeInsets.all(8.0),
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Container(
+              padding: EdgeInsets.all(8.0),
 
-
-    decoration: BoxDecoration(
-      borderRadius: BorderRadius.all(Radius.circular(16)),
-      border: Border.all(color: Colors.grey.withOpacity(0.5)),),
-    child: Column(mainAxisSize: MainAxisSize.min,
-      children: [
-       CalendarInnerWidget(),
-        Divider(color: Colors.grey.withOpacity(0.5),),
-       CalendarInnerWidget(
-         text: 'Going',
-       ),
-        Divider(color: Colors.grey.withOpacity(0.5),),
-        CalendarInnerWidget(
-          text: 'Going',
-        ),
-        Divider(color: Colors.grey.withOpacity(0.5),),
-        CalendarInnerWidget(),
-        Divider(color: Colors.grey.withOpacity(0.5),),
-
-      ],
-
-    ),
-    ),
-),
-
-
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(16)),
+                border: Border.all(color: Colors.grey.withOpacity(0.5)),
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  CalendarInnerWidget(),
+                  Divider(color: Colors.grey.withOpacity(0.5)),
+                  CalendarInnerWidget(text: 'Going'),
+                  Divider(color: Colors.grey.withOpacity(0.5)),
+                  CalendarInnerWidget(text: 'Going'),
+                  Divider(color: Colors.grey.withOpacity(0.5)),
+                  CalendarInnerWidget(),
+                  Divider(color: Colors.grey.withOpacity(0.5)),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
-      bottomNavigationBar: CustomBottomBar(),
     );
   }
 }
 
 class CalendarInnerWidget extends StatelessWidget {
-  String ? text;
-   CalendarInnerWidget({
-    super.key, this.text
-
-  });
+  String? text;
+  CalendarInnerWidget({super.key, this.text});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
-        showDialog(context: context, builder: (context)=>Dialog(
-          backgroundColor: Colors.transparent,
-          child: CardView(),
-        ));
+      onTap: () {
+        showDialog(
+          context: context,
+          builder: (context) =>
+              Dialog(backgroundColor: Colors.transparent, child: CardView()),
+        );
       },
       child: Row(
-
         children: [
           Container(
-
-          height: 72,
+            height: 72,
             width: 72,
-            decoration:BoxDecoration(
+            decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
-              image: DecorationImage(image: AssetImage('assets/images/event_image.png'),fit: BoxFit.cover)
+              image: DecorationImage(
+                image: AssetImage('assets/images/event_image.png'),
+                fit: BoxFit.cover,
+              ),
             ),
-            ),
-          SizedBox(width: 10,),
-          Row(mainAxisAlignment: MainAxisAlignment.center,
+          ),
+          SizedBox(width: 10),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
 
-
             children: [
-              Column(mainAxisAlignment: MainAxisAlignment.center,
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Virgina Philips Wine Testing',style: TextStyle(
-                    color: AppColors.secondary,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w700
-                  ),),
-                  SizedBox(height: 4,),
+                  Text(
+                    'Virgina Philips Wine Testing',
+                    style: TextStyle(
+                      color: AppColors.secondary,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  SizedBox(height: 4),
                   Text('Dhaka bangladesh'),
-                  SizedBox(height: 4,),
-                  Text('18/06/25 08:30PM',),
-
+                  SizedBox(height: 4),
+                  Text('18/06/25 08:30PM'),
                 ],
-
               ),
-              SizedBox(width: 15,),
+              SizedBox(width: 15),
 
               Container(
                 height: 24,
@@ -229,18 +233,20 @@ class CalendarInnerWidget extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                   color: AppColors.primary,
                 ),
-                child: Center(child: Text(text ?? 'Interested',style: TextStyle(
-                  color: AppColors.accent,
-                  fontSize: 12,
-                  fontWeight: FontWeight.w700
-                ),)),
-
-
-              )
+                child: Center(
+                  child: Text(
+                    text ?? 'Interested',
+                    style: TextStyle(
+                      color: AppColors.accent,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
-
-        ]
+        ],
       ),
     );
   }

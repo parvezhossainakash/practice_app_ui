@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 
-import '../../../views/home_view/Home_view.dart';
+import '../../../views/home_view/home_view.dart';
 import '../constant/constant_colors.dart';
 
 
@@ -29,6 +29,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: AppColors.appBackground,
       elevation: 0,
       centerTitle: true,
+      automaticallyImplyLeading: false,
       leading: showBack
           ? IconButton(
         icon: const Icon(Icons.arrow_back_ios),

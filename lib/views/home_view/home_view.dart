@@ -3,8 +3,7 @@ import 'package:get/get.dart';
 import 'package:untitled/core/utils/constant/constant_images.dart';
 
 import '../../core/utils/constant/constant_colors.dart';
-import '../../core/utils/constant/constant_texts.dart';
-import '../../core/utils/custom_widget/custom_bottom_bar.dart';
+
 import 'home_widgets/custom_widgets.dart';
 import 'notification_view/notification_view.dart';
 
@@ -18,6 +17,7 @@ class HomeView extends StatelessWidget {
       child: Scaffold(
         backgroundColor: AppColors.appBackground,
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           // leading: Icon(Icons.arrow_back_ios),
           backgroundColor: AppColors.appBackground,
           elevation: 0,
@@ -79,34 +79,8 @@ class HomeView extends StatelessWidget {
                 ],
               ),
             ),
-
           ],
         ),
-        bottomNavigationBar: CustomBottomBar(),
-        // bottomNavigationBar: BottomNavigationBar(
-        //   currentIndex: 0,
-        //   type: BottomNavigationBarType.fixed,
-        //   backgroundColor: Colors.white,
-        //   elevation: 10,
-        //
-        //   selectedItemColor: Colors.black,
-        //   unselectedItemColor: Colors.grey,
-        //
-        //   items: const [
-        //     BottomNavigationBarItem(
-        //       icon: Icon(Icons.home),
-        //       label: '',
-        //     ),
-        //     BottomNavigationBarItem(
-        //       icon: Icon(Icons.favorite),
-        //       label: '',
-        //     ),
-        //     BottomNavigationBarItem(
-        //       icon: Icon(Icons.person),
-        //       label: '',
-        //     ),
-        //   ],
-        // ),
       ),
     );
   }

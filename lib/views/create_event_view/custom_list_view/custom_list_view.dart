@@ -1,5 +1,6 @@
 import 'dart:ffi';
 import 'package:flutter/material.dart';
+import 'package:untitled/views/create_event_view/edit_card/edit_card.dart';
 import 'catagories.dart';
 
 
@@ -32,82 +33,90 @@ class _CustomListViewState extends State<CustomListView> {
               ),
             ],
           ),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
+          child: InkWell(
+            onTap: (){
+              showDialog(context: context, builder: (context)=>Dialog(
+                child: EditCard(),
+              ));
 
-              // IMAGE
-              Container(
-                height: 134,
-                width: 134,
+            },
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
 
-                decoration: BoxDecoration(
+                // IMAGE
+                Container(
+                  height: 134,
+                  width: 134,
 
-                  image: DecorationImage(image:AssetImage(event.image),
+                  decoration: BoxDecoration(
+
+                    image: DecorationImage(image:AssetImage(event.image),
 
 
-                    fit: BoxFit.cover,
-                  ),
-                  borderRadius: const BorderRadius.all(Radius.circular(12)
+                      fit: BoxFit.cover,
+                    ),
+                    borderRadius: const BorderRadius.all(Radius.circular(12)
 
-                  ),
+                    ),
 
-                ),),
+                  ),),
 
-              const SizedBox(width: 12),
+                const SizedBox(width: 12),
 
-              // DETAILS
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 12),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
+                // DETAILS
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 12),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
 
-                      // TITLE
-                      Text(
-                        event.title,
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
+                        // TITLE
+                        Text(
+                          event.title,
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ),
 
-                      const SizedBox(height: 8),
+                        const SizedBox(height: 8),
 
-                      // DATE & TIME
-                      Row(
-                        children: [
-                          const Icon(Icons.calendar_today, size: 14),
-                          const SizedBox(width: 4),
-                          Text(
-                            "${event.date} • ${event.time}",
-                            style: const TextStyle(fontSize: 12),
-                          ),
-                        ],
-                      ),
-
-                      const SizedBox(height: 6),
-
-                      // LOCATION
-                      Row(
-                        children: [
-                          const Icon(Icons.location_on, size: 14),
-                          const SizedBox(width: 4),
-                          Expanded(
-                            child: Text(
-                              event.location,
+                        // DATE & TIME
+                        Row(
+                          children: [
+                            const Icon(Icons.calendar_today, size: 14),
+                            const SizedBox(width: 4),
+                            Text(
+                              "${event.date} • ${event.time}",
                               style: const TextStyle(fontSize: 12),
-                              overflow: TextOverflow.ellipsis,
                             ),
-                          ),
-                        ],
-                      ),
-                    ],
+                          ],
+                        ),
+
+                        const SizedBox(height: 6),
+
+                        // LOCATION
+                        Row(
+                          children: [
+                            const Icon(Icons.location_on, size: 14),
+                            const SizedBox(width: 4),
+                            Expanded(
+                              child: Text(
+                                event.location,
+                                style: const TextStyle(fontSize: 12),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         );
       },

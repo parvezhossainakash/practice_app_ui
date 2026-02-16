@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:untitled/views/auth_view/signup_view.dart';
-import 'package:untitled/views/home_view/Home_view.dart';
+import 'package:untitled/views/home_view/home_view.dart';
 
+import '../../core/utils/custom_widget/custom_bottom_bar.dart';
 import '../../core/utils/custom_widget/custom_container.dart';
 import '../../core/utils/custom_widget/custom_elevatedbutton.dart';
 import '../../core/utils/custom_widget/custom_textfield.dart';
@@ -89,7 +90,7 @@ class _LoginState extends State<Login> {
                 borderRadius: 12,
                 text: 'Sign in',
                 onPressed: () {
-                  Get.to(HomeView());
+                  Get.to(MainScreen());
                 },
               ),
               SizedBox(height: 24),

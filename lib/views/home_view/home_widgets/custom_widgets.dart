@@ -14,6 +14,7 @@ class CustomGridView extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return GridView.builder(
+      itemCount: images.length,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         mainAxisExtent: 320, // card height
