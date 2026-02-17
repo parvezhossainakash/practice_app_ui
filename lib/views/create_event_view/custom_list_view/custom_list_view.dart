@@ -1,7 +1,7 @@
 import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:untitled/views/create_event_view/edit_card/edit_card.dart';
-import 'catagories.dart';
+import 'catagories_view.dart';
 
 
 class CustomListView extends StatefulWidget {

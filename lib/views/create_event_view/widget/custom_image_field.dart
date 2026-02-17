@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import '../../../core/utils/constant/constant_colors.dart';
-import '../../../core/utils/custom_widget/custom_elevatedbutton.dart';
+import '../../../core/utils/custom_widgets/custom_elevatedbutton.dart';
 
 class CustomImageField extends StatelessWidget {
   const CustomImageField({super.key});

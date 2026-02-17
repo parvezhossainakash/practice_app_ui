@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:untitled/core/utils/custom_widget/custom_text_button.dart';
-import 'package:untitled/views/create_event_view/create_event.dart';
-import 'package:untitled/views/create_event_view/edit_card/edit_card.dart';
-import 'package:untitled/views/create_event_view/create_event.dart';
-import 'package:untitled/views/home_view/home_view.dart';
+import 'package:untitled/views/profile_view/vip_profile_view/vip_profile_view.dart';
 import 'package:untitled/views/splash_view/splash_view.dart';
 
 void main(){
@@ -26,33 +22,33 @@ class App extends StatelessWidget {
     );
   }
 }
-class Home extends StatelessWidget {
-  const Home({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Home"),
-      ),
-        body: Column(
-          children: [
-            CustomTextButton(
-              text: 'text',
-              onPressed: () {
-                showDialog(
-                  context: context,
-                  builder: (context) {
-                    return Dialog(
-                      backgroundColor: Colors.transparent,
-                      child: EditCard(),
-                    );
-                  },
-                );
-              },
-            ),
-          ],
-        ),
-    );
-  }
-}
+// class Home extends StatelessWidget {
+//   const Home({super.key});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text("Home"),
+//       ),
+//         body: Column(
+//           children: [
+//             CustomTextButton(
+//               text: 'text',
+//               onPressed: () {
+//                 showDialog(
+//                   context: context,
+//                   builder: (context) {
+//                     return Dialog(
+//                       backgroundColor: Colors.transparent,
+//                       child: EditCard(),
+//                     );
+//                   },
+//                 );
+//               },
+//             ),
+//           ],
+//         ),
+//     );
+//   }
+// }

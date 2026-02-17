@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../../../core/utils/constant/constant_colors.dart';
 
 
-class description_field extends StatelessWidget {
-  const description_field({
+class DescriptionField extends StatelessWidget {
+  const DescriptionField({
     super.key,
   });
 

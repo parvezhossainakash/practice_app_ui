@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:untitled/views/home_view/card_view/card_view.dart';
-
 import '../../core/utils/constant/constant_colors.dart';
-import '../../core/utils/custom_widget/custom_appbar.dart';
-import '../../core/utils/custom_widget/custom_bottom_bar.dart';
-import '../../core/utils/custom_widget/custom_elevatedbutton.dart';
-import '../create_event_view/custom_list_view/custom_list_view.dart';
+import '../../core/utils/custom_widgets/custom_appbar.dart';
 
 class CalendarView extends StatefulWidget {
   const CalendarView({super.key});

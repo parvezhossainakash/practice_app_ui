@@ -2,25 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:untitled/views/auth_view/signup_view.dart';
-import 'package:untitled/views/home_view/home_view.dart';
 
-import '../../core/utils/custom_widget/custom_bottom_bar.dart';
-import '../../core/utils/custom_widget/custom_container.dart';
-import '../../core/utils/custom_widget/custom_elevatedbutton.dart';
-import '../../core/utils/custom_widget/custom_textfield.dart';
+import '../../core/utils/custom_widgets/custom_container.dart';
+import '../../core/utils/custom_widgets/custom_elevatedbutton.dart';
+import '../../core/utils/custom_widgets/custom_textfield.dart';
+import '../../core/utils/custom_widgets/main_screen.dart';
 import 'forget_password_view.dart';
 
-class Login extends StatefulWidget {
-  Login({super.key});
+class SignInView extends StatefulWidget {
+  SignInView({super.key});
 
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
   @override
-  State<Login> createState() => _LoginState();
+  State<SignInView> createState() => _SignInViewState();
 }
 
-class _LoginState extends State<Login> {
+class _SignInViewState extends State<SignInView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,7 +69,7 @@ class _LoginState extends State<Login> {
                 alignment: Alignment.centerRight,
                 child: InkWell(
                   onTap: () {
-                    Get.to(ForgetPassword());
+                    Get.to(ForgetPasswordView());
                   },
                   child: Text(
                     'Forget password?',

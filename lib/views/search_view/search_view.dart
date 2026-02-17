@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../core/utils/constant/constant_colors.dart';
-import '../../core/utils/custom_widget/custom_appbar.dart';
+import '../../core/utils/custom_widgets/custom_appbar.dart';
 import 'filter_view/filter_view.dart';
 
 class SearchView extends StatelessWidget {

@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:untitled/core/utils/constant/constant_images.dart';
 import 'package:untitled/views/search_view/filter_view/apply_filter_view/apply_filter_view.dart';
 import 'package:untitled/views/search_view/filter_view/widgets/custom_slider.dart';
 import 'package:untitled/views/search_view/filter_view/widgets/filter_text_fileld.dart';
 
 import '../../../core/utils/constant/constant_colors.dart';
-import '../../../core/utils/custom_widget/custom_elevatedbutton.dart';
-import '../../auth_view/signin_view.dart';
-import '../../home_view/home_widgets/custom_widgets.dart';
+import '../../../core/utils/custom_widgets/custom_elevatedbutton.dart';
 import 'catagories_view/catagories_view.dart';
 
 

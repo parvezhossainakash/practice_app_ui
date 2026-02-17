@@ -10,34 +10,149 @@ import '../../../views/create_event_view/create_event_view.dart';
 import '../constant/constant_images.dart';
 import '../constant/constant_images.dart' as Icons;
 
-class _BottomBarItem extends StatelessWidget {
-  final String icon;
-  final VoidCallback onTap;
-  final bool isCenter;
+class MainScreen extends StatefulWidget {
+  const MainScreen({super.key});
 
-  const _BottomBarItem({
-    required this.icon,
-    required this.onTap,
-    this.isCenter = false,
-  });
+  @override
+  State<MainScreen> createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
+  int selectedIndex = 0;
+
+  final List<Widget> pages = [
+    HomeView(),
+    SearchView(),
+    CreateEventView(),
+    CalendarView(),
+    ProfileView(),
+  ];
+
+  void onTabChange(int index) {
+    setState(() {
+      selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      borderRadius: BorderRadius.circular(32),
+    return Scaffold(
+      body: IndexedStack(
+        index: selectedIndex,
+        children: pages,
+      ),
+      bottomNavigationBar: CustomBottomBar(
+        currentIndex: selectedIndex,
+        onTap: onTabChange,
+      ),
+    );
+  }
+}
+
+class CustomBottomBar extends StatelessWidget {
+  final int currentIndex;
+  final Function(int) onTap;
+
+  const CustomBottomBar({
+    super.key,
+    required this.currentIndex,
+    required this.onTap,
+  });
+
+  final List<String> icons = const [
+    AppImage.home,
+    AppImage.search,
+    AppImage.add,
+    AppImage.clander,
+    AppImage.face,
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       child: Container(
-        height: isCenter ? 40 : 30,
-        width: isCenter ? 40 : 30,
+        padding: const EdgeInsets.all(12),
+        height: 72,
         decoration: BoxDecoration(
           color: Colors.white,
+          border: Border.all(color: AppColors.primary),
+          borderRadius: BorderRadius.circular(24),
+          boxShadow: const [
+            BoxShadow(
+              color: Colors.black12,
+              blurRadius: 10,
+              offset: Offset(0, 4),
+            ),
+          ],
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: List.generate(icons.length, (index) {
+            final isSelected = currentIndex == index;
 
-          image: DecorationImage(image: AssetImage(icon), fit: BoxFit.contain),
+            return GestureDetector(
+              onTap: () => onTap(index),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Image.asset(
+                    icons[index],
+                    height: 35,
+
+                  ),
+                  const SizedBox(height: 6),
+                  Container(
+                    height: 3,
+                    width: 35,
+                    decoration: BoxDecoration(
+                      color: isSelected
+                          ? AppColors.primary
+                          : Colors.transparent,
+                      borderRadius: BorderRadius.circular(2),
+                    ),
+                  ),
+                ],
+              ),
+            );
+          }),
         ),
       ),
     );
   }
 }
+
+
+
+
+// class _BottomBarItem extends StatelessWidget {
+//   final String icon;
+//   final VoidCallback onTap;
+//   final bool isCenter;
+//
+//   const _BottomBarItem({
+//     required this.icon,
+//     required this.onTap,
+//     this.isCenter = false,
+//   });
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return InkWell(
+//       onTap: onTap,
+//       borderRadius: BorderRadius.circular(32),
+//       child: Container(
+//         height: isCenter ? 40 : 30,
+//         width: isCenter ? 40 : 30,
+//         decoration: BoxDecoration(
+//           color: Colors.white,
+//
+//           image: DecorationImage(image: AssetImage(icon), fit: BoxFit.contain),
+//         ),
+//       ),
+//     );
+//   }
+// }
 
 // class CustomBottomBar1 extends StatefulWidget {
 //   const CustomBottomBar1({super.key});
@@ -294,114 +409,3 @@ class _BottomBarItem extends StatelessWidget {
 // }
 
 
-class MainScreen extends StatefulWidget {
-  const MainScreen({super.key});
-
-  @override
-  State<MainScreen> createState() => _MainScreenState();
-}
-
-class _MainScreenState extends State<MainScreen> {
-  int selectedIndex = 0;
-
-  final List<Widget> pages = [
-    HomeView(),
-    SearchView(),
-    CreateEventView(),
-    CalendarView(),
-    ProfileView(),
-  ];
-
-  void onTabChange(int index) {
-    setState(() {
-      selectedIndex = index;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: IndexedStack(
-        index: selectedIndex,
-        children: pages,
-      ),
-      bottomNavigationBar: CustomBottomBar(
-        currentIndex: selectedIndex,
-        onTap: onTabChange,
-      ),
-    );
-  }
-}
-
-class CustomBottomBar extends StatelessWidget {
-  final int currentIndex;
-  final Function(int) onTap;
-
-  const CustomBottomBar({
-    super.key,
-    required this.currentIndex,
-    required this.onTap,
-  });
-
-  final List<String> icons = const [
-    AppImage.home,
-    AppImage.search,
-    AppImage.add,
-    AppImage.clander,
-    AppImage.face,
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-      child: Container(
-        padding: const EdgeInsets.all(12),
-        height: 72,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          border: Border.all(color: AppColors.primary),
-          borderRadius: BorderRadius.circular(24),
-          boxShadow: const [
-            BoxShadow(
-              color: Colors.black12,
-              blurRadius: 10,
-              offset: Offset(0, 4),
-            ),
-          ],
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: List.generate(icons.length, (index) {
-            final isSelected = currentIndex == index;
-
-            return GestureDetector(
-              onTap: () => onTap(index),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Image.asset(
-                    icons[index],
-                    height: 35,
-
-                  ),
-                  const SizedBox(height: 6),
-                  Container(
-                    height: 3,
-                    width: 35,
-                    decoration: BoxDecoration(
-                      color: isSelected
-                          ? AppColors.primary
-                          : Colors.transparent,
-                      borderRadius: BorderRadius.circular(2),
-                    ),
-                  ),
-                ],
-              ),
-            );
-          }),
-        ),
-      ),
-    );
-  }
-}

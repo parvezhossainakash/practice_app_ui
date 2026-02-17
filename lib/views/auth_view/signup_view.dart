@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:untitled/views/auth_view/signin_view.dart';
 
-import '../../core/utils/custom_widget/custom_container.dart';
-import '../../core/utils/custom_widget/custom_elevatedbutton.dart';
-import '../../core/utils/custom_widget/custom_textfield.dart';
+import '../../core/utils/custom_widgets/custom_container.dart';
+import '../../core/utils/custom_widgets/custom_elevatedbutton.dart';
+import '../../core/utils/custom_widgets/custom_textfield.dart';
+
 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
@@ -27,7 +29,7 @@ class SignUp extends StatelessWidget {
         width: double.infinity,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/image/login_background.png'),
+            image: AssetImage('assets/images/login_background.png'),
             fit: BoxFit.cover,
           ),
         ),
@@ -104,7 +106,9 @@ class SignUp extends StatelessWidget {
               ),
               SizedBox(height: 24),
 
-              CustomElevatedButton(text: 'Sign up', onPressed: () {}),
+              CustomElevatedButton(text: 'Sign up', onPressed: () {
+                Get.off(SignInView());
+              }),
               SizedBox(height: 24),
 
               Row(crossAxisAlignment: CrossAxisAlignment.center,

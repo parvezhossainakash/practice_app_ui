@@ -4,20 +4,20 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:untitled/views/auth_view/password_successful_view.dart';
 
-import '../../core/utils/custom_widget/custom_container.dart';
-import '../../core/utils/custom_widget/custom_elevatedbutton.dart';
-import '../../core/utils/custom_widget/custom_textfield.dart';
-class ResetPasswordScreen extends StatefulWidget {
-  ResetPasswordScreen({super.key});
+import '../../core/utils/custom_widgets/custom_container.dart';
+import '../../core/utils/custom_widgets/custom_elevatedbutton.dart';
+import '../../core/utils/custom_widgets/custom_textfield.dart';
+class NewPassWordView extends StatefulWidget {
+  NewPassWordView({super.key});
 
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
   @override
-  State<ResetPasswordScreen> createState() => _ResetPasswordScreenState();
+  State<NewPassWordView> createState() => _NewPassWordViewState();
 }
 
-class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
+class _NewPassWordViewState extends State<NewPassWordView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +26,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
         width: double.infinity,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/image/login_background.png'),
+            image: AssetImage('assets/images/login_background.png'),
             fit: BoxFit.cover,
           ),
         ),
@@ -50,7 +50,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
 
               SizedBox(height: 24),
               CustomTextField(
-                suffixIcon: Icon(Icons.visibility_off_outlined),
+                suffixIcon: Icon(Icons.visibility_off),
                 prefixIcon: Icon(Icons.email, color: Color(0xFF0F6421)),
                 controller: TextEditingController(),
                 hintText: 'Enter password',
@@ -59,7 +59,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
 
               SizedBox(height: 20),
               CustomTextField(
-                suffixIcon: Icon(Icons.visibility_off_outlined),
+                suffixIcon: Icon(Icons.visibility_off),
                 controller: TextEditingController(),
                 hintText: 'Enter password',
                 prefixIcon: Icon(Icons.lock, color: Color(0xFF0F6421)),
@@ -78,7 +78,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                 text: 'Save',
 
                 onPressed: () {
-                  Get.bottomSheet(BottomSheetView());
+                  Get.bottomSheet(PasswordSuccessfulView());
 
                 },
               )

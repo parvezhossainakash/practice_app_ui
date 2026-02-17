@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
-
-import '../../../core/utils/custom_widget/custom_elevatedbutton.dart';
+import '../../../core/utils/custom_widgets/custom_elevatedbutton.dart';
 import '../../auth_view/signin_view.dart';
+
 class OnbordingView extends StatelessWidget {
   const OnbordingView({super.key});
 
@@ -47,7 +47,7 @@ class OnbordingView extends StatelessWidget {
                     text: 'Get Started',
                     width:314 ,
                     onPressed: () {
-                      Get.to(Login());
+                      Get.to(SignInView());
                     },
                   ),
                 ],

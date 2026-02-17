@@ -3,11 +3,11 @@ import 'package:get/get.dart';
 import 'package:untitled/core/utils/constant/constant_colors.dart';
 import 'package:untitled/views/auth_view/signin_view.dart';
 
-import '../../core/utils/custom_widget/custom_elevatedbutton.dart';
+import '../../core/utils/custom_widgets/custom_elevatedbutton.dart';
 
 
-class BottomSheetView extends StatelessWidget {
-  const BottomSheetView({super.key});
+class PasswordSuccessfulView extends StatelessWidget {
+  const PasswordSuccessfulView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class BottomSheetView extends StatelessWidget {
 
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/image/bar.png'),
+                image: AssetImage('assets/images/bar.png'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -71,7 +71,7 @@ class BottomSheetView extends StatelessWidget {
             width: 314,
             text: "Back to sign in",
             onPressed: () {
-              Get.to(Login());
+              Get.to(SignInView());
             },
           ),
         ],

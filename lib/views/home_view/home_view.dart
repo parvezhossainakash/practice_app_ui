@@ -4,7 +4,7 @@ import 'package:untitled/core/utils/constant/constant_images.dart';
 
 import '../../core/utils/constant/constant_colors.dart';
 
-import 'home_widgets/custom_widgets.dart';
+import 'home_widgets/home_widgets.dart';
 import 'notification_view/notification_view.dart';
 
 class HomeView extends StatelessWidget {
@@ -70,12 +70,12 @@ class HomeView extends StatelessWidget {
             Expanded(
               child: TabBarView(
                 children: [
-                  CustomGridView(images: imageList),
-                  CustomGridView(images: imageList),
-                  CustomGridView(images: imageList),
-                  CustomGridView(images: imageList),
-                  CustomGridView(images: imageList),
-                  CustomGridView(images: imageList),
+                  HomeWidgets(images: imageList),
+                  HomeWidgets(images: imageList),
+                  HomeWidgets(images: imageList),
+                  HomeWidgets(images: imageList),
+                  HomeWidgets(images: imageList),
+                  HomeWidgets(images: imageList),
                 ],
               ),
             ),

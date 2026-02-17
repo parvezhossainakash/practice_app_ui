@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/utils/constant/constant_colors.dart';
-import '../../../core/utils/custom_widget/custom_elevatedbutton.dart';
-import '../../../core/utils/custom_widget/custom_text_button.dart';
-import '../../home_view/card_view/card_widget/custom_location.dart';
+import '../../../core/utils/custom_widgets/custom_elevatedbutton.dart';
 
 class EditCard extends StatefulWidget {
   const EditCard({super.key});

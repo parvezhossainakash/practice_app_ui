@@ -4,11 +4,11 @@ import 'package:untitled/views/home_view/card_view/card_view.dart';
 
 import '../../../core/utils/constant/constant_colors.dart';
 
-class CustomGridView extends StatelessWidget {
+class HomeWidgets extends StatelessWidget {
  final List<String> images ;
 
 
-   CustomGridView({super.key, required this.images});
+   HomeWidgets({super.key, required this.images});
 
   @override
   Widget build(BuildContext context) {

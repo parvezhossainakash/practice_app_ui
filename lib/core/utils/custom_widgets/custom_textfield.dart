@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/core/utils/constant/constant_colors.dart';
 
 class CustomTextField extends StatelessWidget {
   final TextEditingController controller;
@@ -39,7 +40,8 @@ class CustomTextField extends StatelessWidget {
         labelText: labelText,
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
-        prefixIconColor: Color(0xFF0F6421),
+        suffixIconColor: AppColors.primary,
+        prefixIconColor: AppColors.primary,
         labelStyle: TextStyle(
           color: Color(0xFF202020),
         ),

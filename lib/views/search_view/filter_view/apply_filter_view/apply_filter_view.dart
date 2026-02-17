@@ -3,9 +3,8 @@ import 'package:get/get.dart';
 
 import '../../../../core/utils/constant/constant_colors.dart';
 import '../../../../core/utils/constant/constant_images.dart';
-import '../../../../core/utils/custom_widget/custom_appbar.dart';
-
-import '../../../home_view/home_widgets/custom_widgets.dart';
+import '../../../../core/utils/custom_widgets/custom_appbar.dart';
+import '../../../home_view/home_widgets/home_widgets.dart';
 import '../filter_view.dart';
 
 class ApplyFilterView extends StatelessWidget {
@@ -64,7 +63,7 @@ class ApplyFilterView extends StatelessWidget {
 
           ),
           SizedBox(height: 16,),
-          Expanded(child: CustomGridView(images: imageList)),
+          Expanded(child: HomeWidgets(images: imageList)),
           ]) ,
     );
   }

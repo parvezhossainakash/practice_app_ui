@@ -3,18 +3,18 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:untitled/views/auth_view/verify_email_view.dart';
 
-import '../../core/utils/custom_widget/custom_container.dart';
-import '../../core/utils/custom_widget/custom_elevatedbutton.dart';
-import '../../core/utils/custom_widget/custom_textfield.dart';
+import '../../core/utils/custom_widgets/custom_container.dart';
+import '../../core/utils/custom_widgets/custom_elevatedbutton.dart';
+import '../../core/utils/custom_widgets/custom_textfield.dart';
 
-class ForgetPassword extends StatefulWidget {
-  const ForgetPassword({super.key});
+class ForgetPasswordView extends StatefulWidget {
+  const ForgetPasswordView({super.key});
 
   @override
-  State<ForgetPassword> createState() => _ForgetPasswordState();
+  State<ForgetPasswordView> createState() => _ForgetPasswordViewState();
 }
 
-class _ForgetPasswordState extends State<ForgetPassword> {
+class _ForgetPasswordViewState extends State<ForgetPasswordView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +23,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
             width: double.infinity,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/image/login_background.png'),
+                image: AssetImage('assets/images/login_background.png'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -48,12 +48,13 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                     Text('Welcome back! Please enter your phone email to reset password.',style: TextStyle(fontSize: 12,fontWeight: FontWeight.w500),),
                     SizedBox(height: 24,),
                     CustomTextField(
+                      prefixIcon: Icon(Icons.email),
                       controller: TextEditingController(),
                       hintText: 'Enter email',
                       labelText: 'Email',),
                     SizedBox(height: 20,),
                     CustomElevatedButton(text: "Send", onPressed: (){
-                      Get.to(ValidationPage());
+                      Get.to(VerifyEmailView());
                     })
 
 

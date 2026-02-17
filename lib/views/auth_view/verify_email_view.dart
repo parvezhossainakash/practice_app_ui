@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
-
-import '../../core/utils/custom_widget/custom_container.dart';
-import '../../core/utils/custom_widget/custom_elevatedbutton.dart';
+import '../../core/utils/custom_widgets/custom_container.dart';
+import '../../core/utils/custom_widgets/custom_elevatedbutton.dart';
 import 'new_password_view.dart';
-class ValidationPage extends StatelessWidget {
-  ValidationPage({super.key});
+class VerifyEmailView extends StatelessWidget {
+  VerifyEmailView({super.key});
   final TextEditingController otpController = TextEditingController();
 
 
@@ -42,22 +41,6 @@ class ValidationPage extends StatelessWidget {
               SizedBox(height: 8),
               Text('Enter the passcode sent to your phone below'),
               SizedBox(height: 32),
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //   children: [
-              //     ValidationField(),
-              //     ValidationField(),
-              //     ValidationField(),
-              //     ValidationField(text: '-',   ),
-              //     ValidationField(
-              //       text: '-',
-              //
-              //     ),
-              //     ValidationField(
-              //       text: '-',
-              //     ),
-              //     ],
-              // ),
               SizedBox(height: 32),
               PinCodeTextField(
                 appContext: context,
@@ -106,7 +89,7 @@ class ValidationPage extends StatelessWidget {
 
                 text: "Send",
                 onPressed: () {
-                  Get.to(ResetPasswordScreen());
+                  Get.to(NewPassWordView());
                 },
               ),
               SizedBox(height: 32),

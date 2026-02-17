@@ -3,12 +3,12 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:untitled/views/create_event_view/widget/custom_check_box_field.dart';
-import 'package:untitled/views/create_event_view/widget/custom_event_drop_down.dart';
 import 'package:untitled/views/create_event_view/widget/custom_event_field.dart';
-import 'package:untitled/views/create_event_view/widget/description.dart';
+import 'package:untitled/views/create_event_view/widget/description_field.dart';
 import '../../core/utils/constant/constant_colors.dart';
-import '../../core/utils/custom_widget/custom_appbar.dart';
-import '../../core/utils/custom_widget/custom_elevatedbutton.dart';
+import '../../core/utils/custom_widgets/custom_appbar.dart';
+import '../../core/utils/custom_widgets/custom_elevatedbutton.dart';
+import '../../core/utils/custom_widgets/custom_event_drop_down.dart';
 import 'widget/custom_date_time.dart';
 
 class CreateEvent extends StatelessWidget {
@@ -69,7 +69,7 @@ class CreateEvent extends StatelessWidget {
                 SizedBox(height: 16),
                 CustomCheckBoxField(),
                 SizedBox(height: 16),
-                description_field(),
+                DescriptionField(),
                 SizedBox(height: 16),
                 CustomEventDropDown(
                   text: 'Occurrence type',
@@ -83,6 +83,8 @@ class CreateEvent extends StatelessWidget {
                       text: 'Create Event', onPressed: () {}),
                 ),
                 SizedBox(height: 20,),
+
+                
               ],
             ),
           ),
@@ -128,7 +130,23 @@ class CustomImageField extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12),
               ),
               child: InnerImagePiker(),
-            )
+            ),
+            SizedBox(height: 12,),
+            Row(
+              children: [
+                CustomElevatedButton(
+                    width: 133,
+                    textColor: AppColors.secondary,
+                    backgroundColor: AppColors.appBackground,
+                    text: 'Cancel', onPressed: (){
+
+                }),
+                SizedBox(width: 10,),
+                CustomElevatedButton(
+                    width: 133,
+                    text: 'Done', onPressed: (){})
+              ],
+            ),
           ],
         ),
       ),

@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/src/extension_navigation.dart';
-import 'package:untitled/views/home_view/home_view.dart';
-
 import '../../../core/utils/constant/constant_colors.dart';
-import '../../../core/utils/custom_widget/custom_appbar.dart';
+import '../../../core/utils/custom_widgets/custom_appbar.dart';
 
 class NotificationView extends StatelessWidget {
   const NotificationView({super.key});
