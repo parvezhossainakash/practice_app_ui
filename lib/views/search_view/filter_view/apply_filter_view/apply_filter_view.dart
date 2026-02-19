@@ -46,7 +46,7 @@ class ApplyFilterView extends StatelessWidget {
                 SizedBox(width: 12,),
                 InkWell(
                   onTap: (){
-                    Get.bottomSheet(FilterBottomSheet());
+                    Get.bottomSheet(FilterView());
                   },
                   child: Container(height: 48, width: 48,
 

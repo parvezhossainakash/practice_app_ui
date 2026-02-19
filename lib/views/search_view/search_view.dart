@@ -39,7 +39,7 @@ class SearchView extends StatelessWidget {
                 ),
                 InkWell(
                   onTap: (){
-                    Get.bottomSheet(FilterBottomSheet());
+                    Get.bottomSheet(FilterView());
                   },
                   child: Container(height: 48, width: 48,
 
